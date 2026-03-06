@@ -1,0 +1,23 @@
+issue_id: ""
+project_id: ""
+repo_id: ""
+workspace_id: ""
+result_status: completed
+validation_status: passed
+merge_readiness: ready
+sync_status: up_to_date
+sync_base_branch: main
+sync_commit_before: ""
+sync_commit_after: ""
+human_gate_required: false
+human_gate_reason: ""
+recommended_action: unlock-next
+next_step_hint: ""
+relationship_snapshot:
+  parent: ""
+  depends_on: []
+  blocked_by: []
+  related_tasks: []
+  downstream_candidates: []
+followup_actions: []
+notes: ""

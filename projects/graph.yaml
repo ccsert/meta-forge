@@ -1,0 +1,10 @@
+# 项目依赖图
+# 用于记录项目、仓库、共享能力之间的依赖关系
+
+nodes:
+  - id: example-project
+    type: project
+    name: 示例项目
+    status: active
+
+edges: []

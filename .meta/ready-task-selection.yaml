@@ -1,0 +1,54 @@
+project_id: "sample-project"
+callback_policy: "unlock-next-on-done"
+selected_at: "2026-03-06T15:34:07.778Z"
+ready_tasks:
+  - task_id: "TASK-001"
+    title: "Implement auth middleware"
+    ready: true
+    reasons: []
+    execution_mode: "executable"
+    workspace_launchable: true
+    parent_task_id: "STORY-001"
+    repo_scope: "apps/api"
+ready_count: 1
+auto_start_candidate: ""
+excluded_tasks:
+  - task_id: "EPIC-001"
+    title: "EPIC-001"
+    ready: false
+    reasons:
+      - "execution_mode_not_executable"
+      - "workspace_not_launchable"
+      - "missing_doc_inputs"
+      - "missing_acceptance_criteria"
+      - "missing_repo_scope"
+    execution_mode: "non-executable"
+    workspace_launchable: false
+    parent_task_id: ""
+    repo_scope: ""
+  - task_id: "FEATURE-001"
+    title: "FEATURE-001"
+    ready: false
+    reasons:
+      - "execution_mode_not_executable"
+      - "workspace_not_launchable"
+      - "missing_doc_inputs"
+      - "missing_acceptance_criteria"
+      - "missing_repo_scope"
+    execution_mode: "non-executable"
+    workspace_launchable: false
+    parent_task_id: "EPIC-001"
+    repo_scope: ""
+  - task_id: "STORY-001"
+    title: "STORY-001"
+    ready: false
+    reasons:
+      - "execution_mode_not_executable"
+      - "workspace_not_launchable"
+      - "missing_doc_inputs"
+      - "missing_acceptance_criteria"
+      - "missing_repo_scope"
+    execution_mode: "non-executable"
+    workspace_launchable: false
+    parent_task_id: "FEATURE-001"
+    repo_scope: ""

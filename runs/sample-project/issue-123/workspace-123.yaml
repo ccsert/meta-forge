@@ -1,0 +1,28 @@
+issue_id: "issue-123"
+project_id: "sample-project"
+repo_id: "repo-123"
+task_id: "TASK-001"
+workspace_id: "workspace-123"
+result_status: "completed"
+validation_status: "passed"
+merge_readiness: "ready"
+merge_result: "merged"
+sync_status: "up_to_date"
+sync_base_branch: "main"
+sync_commit_before: "abc111"
+sync_commit_after: "abc222"
+human_gate_required: false
+human_gate_reason: ""
+recommended_action: "unlock-next"
+next_step_hint: "Proceed to downstream selection"
+relationship_snapshot:
+  parent: "STORY-001"
+  depends_on:
+    - "TASK-000"
+  blocked_by: []
+  related_tasks: []
+  downstream_candidates:
+    - "TASK-002"
+followup_actions: []
+notes: "Sample archived result"
+archived_at: "2026-03-06T15:27:41.574Z"

@@ -1,0 +1,17 @@
+project_id: sample-project
+synced_at: ""
+task_to_issue:
+  TASK-001:
+    issue_id: ""
+    title: Implement auth middleware
+    create_status: pending
+    created_at: ""
+    updated_at: ""
+    execution_mode: executable
+    workspace_launchable: true
+    parent_task_id: STORY-001
+    depends_on_task_ids:
+      - TASK-000
+    description_hash: ""
+    source_version: v1
+    notes: ""

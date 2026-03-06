@@ -1,0 +1,33 @@
+project:
+  id: sample-project
+  name: Sample Project
+  status: planning
+  description: >-
+    Brief project description.
+
+repository:
+  github_owner: yourname
+  github_name: sample-project
+  repo_url: https://github.com/yourname/sample-project
+  default_branch: main
+  local_path: ~/workspace/sample-project
+
+vibekanban:
+  organization_id: ""
+  project_id: ""
+  board_id: ""
+  repo_id: ""
+
+artifacts:
+  project_definition: docs/project-definition.md
+  architecture: docs/architecture/architecture-init.md
+  task_breakdown: docs/planning/task-breakdown.md
+  adr_dir: docs/adrs
+  issue_map: docs/meta/issue-map.yaml
+
+automation:
+  default_executor: CODEX
+  callback_policy: unlock-next-on-done
+  merge_policy: agent-resolve
+  auto_start_next_task: false
+  create_issue_on_merge_conflict: true

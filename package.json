@@ -1,0 +1,15 @@
+{
+  "name": "meta-forge",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "generate-issue-batch": "node scripts/generate-issue-batch.mjs",
+    "render-issue-description": "node scripts/render-issue-description.mjs",
+    "archive-session-result": "node scripts/archive-session-result.mjs",
+    "select-ready-task": "node scripts/select-ready-task.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

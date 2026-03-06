@@ -1,0 +1,50 @@
+# 项目注册表
+# 所有由元仓库管理的业务项目均在此登记
+
+projects:
+  - id: example-project
+    name: 示例项目
+    description: 这是一个示例项目条目
+    status: active                     # planning | active | paused | archived
+    type: web-fullstack                # web-fullstack | api-service | cli-tool
+    created_at: "2026-03-06"
+    playbook: new-project
+
+    repository:
+      github_owner: yourname
+      github_name: example-project
+      repo_url: https://github.com/yourname/example-project
+      default_branch: main
+      local_path: ~/workspace/example-project
+      branch_strategy: trunk           # trunk | gitflow
+      setup_script_managed: true
+      cleanup_script_managed: true
+
+    tech_stack:
+      - Next.js
+      - TypeScript
+      - PostgreSQL
+
+    deploy_target: vercel              # vercel | railway | self-hosted
+
+    vibekanban:
+      organization_id: ""
+      project_id: ""
+      board_id: ""
+      repo_id: ""
+
+    docs:
+      project_definition: docs/project-definition.md
+      architecture: docs/architecture/architecture-init.md
+      task_breakdown: docs/planning/task-breakdown.md
+      adr_dir: docs/adrs
+      issue_map: docs/meta/issue-map.yaml
+
+    automation:
+      default_executor: CODEX
+      callback_policy: unlock-next-on-done
+      merge_policy: agent-resolve
+      auto_start_next_task: false
+      create_issue_on_merge_conflict: true
+
+    notes: ""

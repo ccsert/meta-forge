@@ -1,0 +1,17 @@
+project_id: sample-project
+statuses:
+  - task_id: EPIC-001
+    status: open
+    human_gate_required: false
+  - task_id: FEATURE-001
+    status: open
+    human_gate_required: false
+  - task_id: STORY-001
+    status: open
+    human_gate_required: false
+  - task_id: TASK-000
+    status: done
+    human_gate_required: false
+  - task_id: TASK-001
+    status: open
+    human_gate_required: false

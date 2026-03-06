@@ -1,0 +1,44 @@
+project_id: sample-project
+repo_id: repo-uuid
+base_branch: main
+
+issues:
+  - task_id: EPIC-001
+    title: Example epic
+    task_type: epic
+    execution_mode: non-executable
+    workspace_launchable: false
+    execution_reason: epic container only
+    parent_task_id: ""
+    depends_on_task_ids: []
+    blocked_by_task_ids: []
+    related_task_ids: []
+    spawned_from_task_id: ""
+    repo_scope: meta
+    doc_inputs:
+      - docs/project-definition.md
+    acceptance_criteria:
+      - epic scope is defined
+
+  - task_id: TASK-001
+    title: Implement auth middleware
+    task_type: task
+    execution_mode: executable
+    workspace_launchable: true
+    execution_reason: single-workspace implementation task
+    parent_task_id: STORY-001
+    depends_on_task_ids:
+      - TASK-000
+    blocked_by_task_ids: []
+    related_task_ids: []
+    spawned_from_task_id: ""
+    repo_scope: apps/api
+    doc_inputs:
+      - docs/project-definition.md
+      - docs/architecture/architecture-init.md
+      - docs/api-contracts.md
+    acceptance_criteria:
+      - middleware validates bearer token
+      - unauthorized requests return 401
+
+task_to_issue: {}

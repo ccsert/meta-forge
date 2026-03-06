@@ -1,0 +1,71 @@
+project_id: "sample-project"
+repo_id: ""
+base_branch: "main"
+issues:
+  - task_id: "EPIC-001"
+    title: "EPIC-001"
+    task_type: "epic"
+    execution_mode: "non-executable"
+    workspace_launchable: false
+    execution_reason: "epic container only"
+    parent_task_id: ""
+    depends_on_task_ids: []
+    blocked_by_task_ids: []
+    related_task_ids: []
+    downstream_candidates: []
+    spawned_from_task_id: ""
+    repo_scope: ""
+    doc_inputs: []
+    acceptance_criteria: []
+  - task_id: "FEATURE-001"
+    title: "FEATURE-001"
+    task_type: "feature"
+    execution_mode: "non-executable"
+    workspace_launchable: false
+    execution_reason: "feature container only"
+    parent_task_id: "EPIC-001"
+    depends_on_task_ids: []
+    blocked_by_task_ids: []
+    related_task_ids: []
+    downstream_candidates: []
+    spawned_from_task_id: ""
+    repo_scope: ""
+    doc_inputs: []
+    acceptance_criteria: []
+  - task_id: "STORY-001"
+    title: "STORY-001"
+    task_type: "story"
+    execution_mode: "non-executable"
+    workspace_launchable: false
+    execution_reason: "story container only"
+    parent_task_id: "FEATURE-001"
+    depends_on_task_ids: []
+    blocked_by_task_ids: []
+    related_task_ids: []
+    downstream_candidates: []
+    spawned_from_task_id: ""
+    repo_scope: ""
+    doc_inputs: []
+    acceptance_criteria: []
+  - task_id: "TASK-001"
+    title: "Implement auth middleware"
+    task_type: "task"
+    execution_mode: "executable"
+    workspace_launchable: true
+    execution_reason: "single-workspace implementation task"
+    parent_task_id: "STORY-001"
+    depends_on_task_ids:
+      - "TASK-000"
+    blocked_by_task_ids: []
+    related_task_ids: []
+    downstream_candidates: []
+    spawned_from_task_id: ""
+    repo_scope: "apps/api"
+    doc_inputs:
+      - "docs/project-definition.md"
+      - "docs/architecture/architecture-init.md"
+    acceptance_criteria:
+      - "middleware validates bearer token"
+      - "unauthorized requests return 401"
+task_to_issue:
+{}
