@@ -21,6 +21,10 @@
 
 ## 快速入口
 
+### 如果我是 AI 我先看哪里
+→ 阅读 [AI Entrypoint](./AI_ENTRYPOINT.md)
+
+
 ### 我要创建一个新项目
 → 阅读 [新项目立项流程](./playbooks/new-project.md)
 
