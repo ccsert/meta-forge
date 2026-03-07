@@ -4,7 +4,7 @@ updated_at: "2026-03-07"
 
 meta:
   issue_system: vibekanban
-  sync_status: partially_synced
+  sync_status: pre-sync
   sync_rule: create-after-repo-and-project-binding
   notes:
     - VibeKanban issue IDs must be written only after MCP-based creation succeeds.
@@ -24,33 +24,33 @@ vibekanban:
 
 mappings:
   - task_id: EPIC-001
-    issue_id: "ee859d7e-7e94-4826-8a6a-ac07dbcbc545"
-    status: synced
+    issue_id: ""
+    status: pending_sync
     type: epic
     title: 建立项目可开发骨架与基础领域模型
   - task_id: FEATURE-001
-    issue_id: "b5293ce1-58b0-43ca-af2a-a49e25e479a1"
-    status: synced
+    issue_id: ""
+    status: pending_sync
     type: feature
     title: 初始化轻量化业务仓骨架
   - task_id: FEATURE-002
-    issue_id: "06317f2c-5e35-4478-9eb5-aa93389e8547"
-    status: synced
+    issue_id: ""
+    status: pending_sync
     type: feature
     title: 建立数据模型与基础存储结构
   - task_id: FEATURE-003
-    issue_id: "15ab18ff-60f0-49ca-9a43-911e37c64ee1"
-    status: synced
+    issue_id: ""
+    status: pending_sync
     type: feature
     title: 建立开发与部署基础设施
   - task_id: STORY-001
-    issue_id: "55e8644e-0947-429e-9947-7d59c7424bd8"
-    status: synced
+    issue_id: ""
+    status: pending_sync
     type: story
     title: 搭建后端与 worker 基础骨架
   - task_id: STORY-002
-    issue_id: "b5139ae5-2a4c-4186-b3e9-2783f67dbb5b"
-    status: synced
+    issue_id: ""
+    status: pending_sync
     type: story
     title: 搭建管理后台基础骨架
   - task_id: EPIC-002
@@ -64,18 +64,18 @@ mappings:
     type: epic
     title: 提升多账号执行稳定性、可观测性与运营可用性
   - task_id: TASK-001
-    issue_id: "5ca68d89-2082-4eba-a220-efeee4660d82"
-    status: synced
+    issue_id: ""
+    status: pending_sync
     type: task
     title: 初始化 Hono API 服务骨架与基础路由
   - task_id: TASK-002
-    issue_id: "77c3c842-7ab5-45f7-9320-726e69b6560c"
-    status: synced
+    issue_id: ""
+    status: pending_sync
     type: task
     title: 初始化 worker 进程骨架与队列接入基础设施
   - task_id: TASK-003
-    issue_id: "81e60b91-c370-47f3-8c7a-785354439b6a"
-    status: synced
+    issue_id: ""
+    status: pending_sync
     type: task
     title: 初始化 React 19 + Vite + shadcn/ui 管理后台骨架
 
