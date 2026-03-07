@@ -94,6 +94,28 @@
 
 ---
 
+### `meta-new-project`
+
+作用：
+
+- 从想法推进到 `project-definition.md`
+- 再推进到 `architecture-init.md`
+- 再推进到 `task-breakdown.md`
+- 约束阶段 1/2/3 的顺序和人工闸门
+
+目录：
+
+- `skills/meta-new-project/SKILL.md`
+- `skills/meta-new-project/scripts/check-new-project-docs.mjs`
+
+适用场景：
+
+- “我要开始一个新项目”
+- “帮我先做 project-definition / architecture / task-breakdown”
+- “我现在还处于阶段 1-3 吗”
+
+---
+
 ## 2. 推荐使用顺序
 
 ### 场景 A：判断当前是否可以继续下一步
@@ -116,29 +138,26 @@
 
 ---
 
-## 3. 当前仍建议后续补齐的 Skills
+## 3. 当前状态
 
-- `meta-new-project`
-
-推荐优先级：
-
-1. 先稳定现有 4 个 skill 的实际使用效果
-2. 最后补 `meta-new-project`
+目前建议先稳定现有 5 个 skill 的实际使用效果，再根据真实使用情况决定是否继续拆更细的辅助 skill。
 
 ---
 
 ## 4. 当前建议结论
 
-当前元仓库已经形成一个最小可用的 skills 组合：
+当前元仓库已经形成一个覆盖新项目主流程的 skills 组合：
 
 - `meta-stage-gate`
 - `meta-task-description`
 - `meta-vibekanban-sync`
 - `meta-project-bootstrap`
+- `meta-new-project`
 
-这 4 个 skill 已经覆盖当前最容易出错的四个环节：
+这 5 个 skill 已经覆盖当前最容易出错的五个环节：
 
 - 阶段判断
 - 任务描述协议
 - VibeKanban 同步
 - 业务仓 bootstrap
+- 新项目阶段 1-3 推进
