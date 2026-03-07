@@ -2,6 +2,11 @@
 # 用于记录项目、仓库、共享能力之间的依赖关系
 
 nodes:
+
+  - id: xhs-draft-platform
+    type: project
+    name: 小红书 AI 草稿投递平台
+    status: planning
   - id: example-project
     type: project
     name: 示例项目

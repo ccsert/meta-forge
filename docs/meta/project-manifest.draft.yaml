@@ -1,0 +1,46 @@
+project:
+  id: xhs-draft-platform
+  name: 小红书 AI 草稿投递平台
+  status: planning
+  description: >-
+    面向多账号运营场景的 AI 草稿投递平台，负责图文生成、素材去重分配、
+    小红书草稿写入、登录二维码通知与任务调度。
+
+repository:
+  github_owner: ccsert
+  github_name: xhs-draft-platform
+  repo_url: https://github.com/ccsert/xhs-draft-platform
+  default_branch: main
+  visibility: private
+  local_path: /home/ccsert/project/xhs-draft-platform
+
+vibekanban:
+  organization_id: "80d2129f-e480-45ff-a650-9e877d985e1d"
+  project_id: "05e17528-f380-456c-979d-8f4f1af9f196"
+  board_id: ""
+  repo_id: "3f769223-4139-4a05-8d86-fca3c3b8612e"
+
+artifacts:
+  project_definition: docs/project-definition.md
+  architecture: docs/architecture/architecture-init.md
+  task_breakdown: docs/planning/task-breakdown.md
+  adr_dir: docs/adrs
+  issue_map: docs/meta/issue-map.yaml
+
+automation:
+  default_executor: CODEX
+  callback_policy: unlock-next-on-done
+  merge_policy: agent-resolve
+  auto_start_next_task: false
+  create_issue_on_merge_conflict: true
+
+notifications:
+  primary_provider: feishu
+
+notes:
+  vibekanban_ids_status: organization_id_project_id_repo_id_resolved
+  project_naming_rule: use_repo_name_xhs-draft-platform
+
+board_meta:
+  board_id_status: optional_not_required
+  board_id_note: board_id is treated as non-required for the current flow.
