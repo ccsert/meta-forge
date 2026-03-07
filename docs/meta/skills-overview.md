@@ -71,6 +71,29 @@
 
 ---
 
+### `meta-project-bootstrap`
+
+作用：
+
+- 创建业务仓
+- 生成/确认 bootstrap 命令
+- 生成文档注入计划
+- 约束阶段 4/5 不直接滑向执行阶段
+
+目录：
+
+- `skills/meta-project-bootstrap/SKILL.md`
+- `skills/meta-project-bootstrap/scripts/bootstrap-business-repo.mjs`
+- `skills/meta-project-bootstrap/scripts/inject-meta-docs.mjs`
+
+适用场景：
+
+- “帮我创建业务仓”
+- “把元仓库文档注入到业务仓”
+- “执行新项目的阶段 4/5”
+
+---
+
 ## 2. 推荐使用顺序
 
 ### 场景 A：判断当前是否可以继续下一步
@@ -95,14 +118,12 @@
 
 ## 3. 当前仍建议后续补齐的 Skills
 
-- `meta-project-bootstrap`
 - `meta-new-project`
 
 推荐优先级：
 
-1. 先稳定现有 3 个 skill 的实际使用效果
-2. 再补 `meta-project-bootstrap`
-3. 最后补 `meta-new-project`
+1. 先稳定现有 4 个 skill 的实际使用效果
+2. 最后补 `meta-new-project`
 
 ---
 
@@ -113,9 +134,11 @@
 - `meta-stage-gate`
 - `meta-task-description`
 - `meta-vibekanban-sync`
+- `meta-project-bootstrap`
 
-这 3 个 skill 已经覆盖当前最容易出错的三个环节：
+这 4 个 skill 已经覆盖当前最容易出错的四个环节：
 
 - 阶段判断
 - 任务描述协议
 - VibeKanban 同步
+- 业务仓 bootstrap
