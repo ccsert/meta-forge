@@ -13,9 +13,9 @@
 
 目录：
 
-- `skills/meta-stage-gate/SKILL.md`
-- `skills/meta-stage-gate/scripts/check-stage-ready.mjs`
-- `skills/meta-stage-gate/scripts/snapshot-stage-status.mjs`
+- `.agents/skills/meta-stage-gate/SKILL.md`
+- `.agents/skills/meta-stage-gate/scripts/check-stage-ready.mjs`
+- `.agents/skills/meta-stage-gate/scripts/snapshot-stage-status.mjs`
 
 适用场景：
 
@@ -35,9 +35,9 @@
 
 目录：
 
-- `skills/meta-task-description/SKILL.md`
-- `skills/meta-task-description/scripts/render-vibekanban-description.mjs`
-- `skills/meta-task-description/scripts/validate-issue-description.mjs`
+- `.agents/skills/meta-task-description/SKILL.md`
+- `.agents/skills/meta-task-description/scripts/render-vibekanban-description.mjs`
+- `.agents/skills/meta-task-description/scripts/validate-issue-description.mjs`
 
 适用场景：
 
@@ -58,10 +58,10 @@
 
 目录：
 
-- `skills/meta-vibekanban-sync/SKILL.md`
-- `skills/meta-vibekanban-sync/scripts/backfill-vibekanban-ids.mjs`
-- `skills/meta-vibekanban-sync/scripts/sync-task-breakdown-to-vibekanban.mjs`
-- `skills/meta-vibekanban-sync/scripts/sync-issue-relationships.mjs`
+- `.agents/skills/meta-vibekanban-sync/SKILL.md`
+- `.agents/skills/meta-vibekanban-sync/scripts/backfill-vibekanban-ids.mjs`
+- `.agents/skills/meta-vibekanban-sync/scripts/sync-task-breakdown-to-vibekanban.mjs`
+- `.agents/skills/meta-vibekanban-sync/scripts/sync-issue-relationships.mjs`
 
 适用场景：
 
@@ -82,9 +82,9 @@
 
 目录：
 
-- `skills/meta-project-bootstrap/SKILL.md`
-- `skills/meta-project-bootstrap/scripts/bootstrap-business-repo.mjs`
-- `skills/meta-project-bootstrap/scripts/inject-meta-docs.mjs`
+- `.agents/skills/meta-project-bootstrap/SKILL.md`
+- `.agents/skills/meta-project-bootstrap/scripts/bootstrap-business-repo.mjs`
+- `.agents/skills/meta-project-bootstrap/scripts/inject-meta-docs.mjs`
 
 适用场景：
 
@@ -105,8 +105,8 @@
 
 目录：
 
-- `skills/meta-new-project/SKILL.md`
-- `skills/meta-new-project/scripts/check-new-project-docs.mjs`
+- `.agents/skills/meta-new-project/SKILL.md`
+- `.agents/skills/meta-new-project/scripts/check-new-project-docs.mjs`
 
 适用场景：
 

@@ -418,7 +418,7 @@ skill 应聚焦：
 ## 8. 推荐目录结构
 
 ```text
-skills/
+.agents/skills/
   meta-stage-gate/
     SKILL.md
     scripts/
