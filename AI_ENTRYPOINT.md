@@ -77,7 +77,30 @@
 
 ---
 
-## 第二步：选择你的角色
+## 第二步：优先使用 Skills 触发
+
+本仓库定义了一组可触发技能（Skills），它们封装了最常见的流程，比 playbook + agent 手动组装更稳定。
+
+Skills 定义位于 `.agents/skills/`，注册入口位于 `AGENTS.md`。
+
+### 可用 Skills
+
+| Skill | 触发场景 |
+|-------|---------|
+| `meta-new-project` | 新项目从想法到文档基线（阶段 1-3） |
+| `meta-project-bootstrap` | 创建业务仓库并注入文档（阶段 4-5） |
+| `meta-stage-gate` | 判断当前阶段、防止阶段漂移 |
+| `meta-task-description` | 渲染/校验 VibeKanban 任务描述 |
+| `meta-vibekanban-sync` | 同步任务到 VibeKanban、回填 ID |
+
+### 如何匹配
+
+- 若用户请求匹配上述任一 Skill，直接触发该 Skill
+- 若无匹配 Skill，再按传统 agent + playbook 方式进行
+
+---
+
+## 第三步：选择你的角色（当 Skill 不匹配时）
 
 根据当前目标选择一个角色：
 
@@ -93,7 +116,7 @@
 
 ---
 
-## 第三步：只加载最小必读集
+## 第四步：只加载最小必读集
 
 不要加载整个仓库，只加载当前阶段对应的最小上下文包。
 
@@ -102,7 +125,7 @@
 
 ---
 
-## 第四步：按结构化产物交接
+## 第五步：按结构化产物交接
 
 上游交给下游的，优先应是：
 
@@ -122,7 +145,7 @@
 
 ---
 
-## 第五步：遇到不确定性时如何处理
+## 第六步：遇到不确定性时如何处理
 
 先按这个顺序判断：
 
@@ -147,8 +170,10 @@
 如果你不确定从哪里开始，按这个顺序：
 
 1. 读 `AI_ENTRYPOINT.md`
-2. 读 `docs/ai-stage-routing.md`
-3. 选定当前 agent 角色
-4. 读 `docs/ai-context-packs.md`
-5. 只加载当前阶段最小必读文件
-6. 按对应 playbook 执行
+2. 检查请求是否匹配 Skills（见 `AGENTS.md`）
+3. 若匹配 Skill → 直接触发
+4. 若不匹配 → 读 `docs/ai-stage-routing.md`
+5. 选定当前 agent 角色
+6. 读 `docs/ai-context-packs.md`
+7. 只加载当前阶段最小必读文件
+8. 按对应 playbook 执行

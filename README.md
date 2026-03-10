@@ -70,6 +70,18 @@
 ### 我要了解 Node 自动化脚手架
 → 阅读 [Node 自动化脚手架](./docs/node-automation.md)
 
+### 我要了解 VibeKanban MCP 工具用法
+→ 阅读 [VibeKanban MCP 工具参考](./docs/vibekanban-mcp-tools.md)
+
+### 我要了解经验回流机制
+→ 阅读 [经验回流 Playbook](./playbooks/experience-feedback.md)
+
+### 我要了解 Agent 交接信号协议
+→ 阅读 [Agent 交接信号标准](./standards/agent-handoff.md)
+
+### 我要了解编码/API/数据库标准
+→ 阅读 [编码标准](./standards/coding.md) · [API 标准](./standards/api.md) · [数据库标准](./standards/db.md)
+
 ---
 
 ## 如何与 Codex 协作
@@ -90,11 +102,11 @@
 
 | 场景 | 加载内容 |
 |------|----------|
-| 需求分析 | prompts/analysis + standards/task-definition |
-| 架构设计 | prompts/architecture + skills/architecture + standards/api + standards/db |
-| 任务拆解 | prompts/planning + standards/task-definition + standards/dod |
-| 编码执行 | prompts/implementation + skills/coding + skills/vibekanban + standards/coding |
-| 代码审查 | prompts/review + standards/coding + standards/dod |
+| 需求分析 | `prompts/analysis/` + `standards/task-execution-unit.md` + `templates/project-definition.md` |
+| 架构设计 | `prompts/architecture/` + `standards/api.md` + `standards/db.md` + `templates/tech-design.md` |
+| 任务拆解 | `prompts/planning/` + `standards/task-execution-unit.md` + `standards/task-relationship-model.md` + `standards/dod.md` |
+| 编码执行 | `prompts/implementation/` + `standards/coding.md` + `standards/dod.md` |
+| 代码审查 | `prompts/review/` + `standards/coding.md` + `standards/dod.md` + `standards/merge-policy.md` |
 
 ---
 

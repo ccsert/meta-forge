@@ -6,7 +6,7 @@
 
 ## 代码层面
 
-- [ ] 代码已按规范编写（参考 coding-standards.md）
+- [ ] 代码已按规范编写（参考 [coding.md](./coding.md)）
 - [ ] 代码已通过 lint 检查，无 error
 - [ ] 代码已通过类型检查（如适用）
 - [ ] 没有遗留的 TODO / FIXME（或已记录为新 task）

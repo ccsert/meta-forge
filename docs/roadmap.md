@@ -28,13 +28,31 @@
 - [x] 定义 cleanup callback
 - [x] 定义自动解锁下游任务
 - [x] 定义自动 merge 与冲突补偿
-- [ ] 定义经验回流机制
-
+- [x] 定义经验回流机制（`playbooks/experience-feedback.md`）
 
 ## Phase 5：脚本化执行层
 
 - [x] 定义脚本接口协议
-- [ ] 实现 `generate-issue-batch`
-- [ ] 实现 `render-issue-description`
-- [ ] 实现 `archive-session-result`
-- [ ] 接入 VibeKanban MCP
+- [x] 实现 `generate-issue-batch`
+- [x] 实现 `render-issue-description`
+- [x] 实现 `archive-session-result`
+- [x] 实现 `select-ready-task`
+- [ ] 接入 VibeKanban MCP 端到端验证
+
+## Phase 6：文档与模板完善
+
+- [x] 补全 `prompts/` 目录（analysis / architecture / planning / implementation / review）
+- [x] 补全 `templates/`（project-definition / tech-design / adr / prd）
+- [x] 补全 `standards/`（coding / api / db）
+- [x] 创建 `generators/` 项目脚手架目录
+- [x] 补全 VibeKanban MCP 工具参考文档
+- [x] 定义 issue-map 多副本同步协议
+- [x] 定义 Agent 交接信号协议
+- [x] 整合 Skills 体系到 AI_ENTRYPOINT.md
+
+## Phase 7：自动化增强（规划中）
+
+- [ ] 实现从 VibeKanban 自动拉取最新任务状态快照
+- [ ] 实现端到端 MCP issue 创建 + 关系建立 + 映射回写自动化
+- [ ] 实现经验回流的半自动化（模板 + 脚本辅助）
+- [ ] 实现 generator 脚本化（变量替换 + 目录创建）
