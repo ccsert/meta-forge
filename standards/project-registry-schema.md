@@ -12,7 +12,7 @@
 - `repo`
 - `type`
 - `created_at`
-- `playbook`
+- `playbook` — `new-project` | `onboard-existing`
 
 ## 建议字段
 
@@ -54,3 +54,4 @@
 - 文档路径优先记录仓库内相对路径
 - `issue-map.yaml` 建议记录业务仓库主副本路径，并允许元仓库存索引摘要
 - 策略字段必须显式，避免依赖隐式默认值
+- `playbook` 用于区分项目来源：`new-project`（全新项目走 Stage 1-8）或 `onboard-existing`（已有项目走 O1-O6）

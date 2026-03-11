@@ -15,6 +15,7 @@ When working in this repository, prefer these project-local skills before fallin
 - `meta-vibekanban-sync`: Resolve VibeKanban IDs, sync task nodes, sync relationships, and keep `issue-map` aligned. (path: `.agents/skills/meta-vibekanban-sync/SKILL.md`)
 - `meta-project-bootstrap`: Create/bootstrap business repositories and inject core meta-repo documents. (path: `.agents/skills/meta-project-bootstrap/SKILL.md`)
 - `meta-new-project`: Drive stage 1-3 of the new-project flow from idea to document baseline. (path: `.agents/skills/meta-new-project/SKILL.md`)
+- `meta-onboard-project`: Onboard an existing project into meta-forge by auditing the codebase and backfilling standard documents. (path: `.agents/skills/meta-onboard-project/SKILL.md`)
 
 ## Usage rule
 
@@ -35,6 +36,7 @@ When working in this repository, prefer these project-local skills before fallin
 | "下一个任务" | `node scripts/meta-cli.mjs next --result ... --batch ... --status ...` |
 | "项目状态" / "仪表盘" | `node scripts/meta-cli.mjs status [--project <id>]` |
 | "开始写代码" | 先 `meta-stage-gate`，再 `playbooks/execution-agent-run.md` |
+| "接入老项目" / "导入项目" / "onboard" | 读 `.agents/skills/meta-onboard-project/SKILL.md` |
 
 ## CLI 工具
 

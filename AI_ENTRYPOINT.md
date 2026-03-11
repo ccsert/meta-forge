@@ -44,10 +44,16 @@
 | "项目状态" / "仪表盘" / "dashboard" | 查看项目仪表盘 | `npm run meta -- status` |
 | "开始写代码" / "执行任务" | Stage Gate 检查 → Execution Agent | 先 `meta-stage-gate` 再 playbook |
 | "审查代码" / "merge" / "review" | Review / Merge Agent | playbook |
+| "接入老项目" / "导入项目" / "已有项目" / "onboard" | 接入已有项目（O1-O6） | `meta-onboard-project` |
 
 如果用户意图不在上表中，按以下顺序判断：
 
-按以下顺序判断：
+### 0. 接入已有项目
+如果用户提到已有代码仓库需要纳管，或项目已有代码但缺少 meta-forge 标准文档：
+
+读取：
+- `playbooks/onboard-existing-project.md`
+- `standards/document-baseline.md`
 
 ### 1. 新项目阶段
 如果缺少以下任一核心文档：
@@ -111,6 +117,7 @@ Skills 定义位于 `.agents/skills/`，注册入口位于 `AGENTS.md`。
 | `meta-stage-gate` | 判断当前阶段、防止阶段漂移 |
 | `meta-task-description` | 渲染/校验 VibeKanban 任务描述 |
 | `meta-vibekanban-sync` | 同步任务到 VibeKanban、回填 ID |
+| `meta-onboard-project` | 接入已有项目，逆向回填文档基线 |
 
 ### 如何匹配
 

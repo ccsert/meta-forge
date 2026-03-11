@@ -28,6 +28,7 @@
 | `meta-stage-gate` | 判断当前阶段、防止阶段漂移 | `.agents/skills/meta-stage-gate/SKILL.md` |
 | `meta-task-description` | 渲染/校验 VibeKanban 任务描述 | `.agents/skills/meta-task-description/SKILL.md` |
 | `meta-vibekanban-sync` | 同步任务到 VibeKanban、回填 ID | `.agents/skills/meta-vibekanban-sync/SKILL.md` |
+| `meta-onboard-project` | 接入已有项目，逆向回填文档基线 | `.agents/skills/meta-onboard-project/SKILL.md` |
 
 ## 快速意图映射
 
@@ -42,6 +43,7 @@
 | "下一个任务" | 运行 `node scripts/orchestrate-next-task.mjs --result ... --batch ... --status ...` |
 | "项目状态" / "仪表盘" | 运行 `node scripts/project-status.mjs [--project <id>]` |
 | "开始写代码" | 先阶段检查，再读 `playbooks/execution-agent-run.md` |
+| "接入老项目" / "导入项目" / "onboard" | 读 `.agents/skills/meta-onboard-project/SKILL.md` |
 
 ## CLI 工具
 

@@ -56,3 +56,11 @@
 - 进入 `Orchestrator Agent`
 - 读取 `playbooks/orchestrate-next-task.md`
 - 读取 `playbooks/orchestrator-agent-run.md`
+
+### Route H：接入已有项目
+条件：用户提到已有代码仓库需要纳管，或项目已有代码但缺少 meta-forge 标准文档
+
+下一步：
+- 触发 `meta-onboard-project` Skill
+- 读取 `playbooks/onboard-existing-project.md`
+- 读取 `standards/document-baseline.md`
