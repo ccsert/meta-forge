@@ -189,10 +189,29 @@ Skills 定义位于 `.agents/skills/`，注册入口位于 `AGENTS.md`。
 如果你不确定从哪里开始，按这个顺序：
 
 1. 读 `AI_ENTRYPOINT.md`
-2. 检查请求是否匹配 Skills（见 `AGENTS.md`）
+2. 检查请求是否匹配 Skills（见下方 Skills 表或各工具入口文件）
 3. 若匹配 Skill → 直接触发
 4. 若不匹配 → 读 `docs/ai-stage-routing.md`
 5. 选定当前 agent 角色
 6. 读 `docs/ai-context-packs.md`
 7. 只加载当前阶段最小必读文件
 8. 按对应 playbook 执行
+
+---
+
+## 多工具支持
+
+本文件（`AI_ENTRYPOINT.md`）是所有 AI 编码工具的 **通用核心路由文档**。每个工具有一个薄适配入口文件，提供工具特定的格式和注意事项后指向此处：
+
+| 工具 | 入口文件 | 特有约定 |
+|------|---------|---------|
+| VS Code GitHub Copilot | `AGENTS.md` | Skills 自动发现（`## Project Skills` 格式） |
+| OpenAI Codex CLI | `CODEX.md` | Sandbox 模式，无网络依赖 |
+| Claude Code | `CLAUDE.md` | 标准 Claude Code 入口 |
+| OpenCode | `.opencode.md` | 标准 OpenCode 入口 |
+
+所有工具共享：
+- 相同的 Skills 定义（`.agents/skills/`）
+- 相同的 Playbooks、Standards、Templates
+- 相同的 CLI 脚本（`scripts/meta-cli.mjs`）
+- 相同的阶段路由规则（本文件）
