@@ -50,8 +50,15 @@
 - [x] 定义 Agent 交接信号协议
 - [x] 整合 Skills 体系到 AI_ENTRYPOINT.md
 
-## Phase 7：自动化增强（规划中）
+## Phase 7：自动化增强
 
+- [x] 实现 `check-stage-ready` 阶段就绪验证脚本
+- [x] 实现 `orchestrate-next-task` 编排下一个任务脚本
+- [x] 实现 `project-status` 项目状态仪表盘脚本
+- [x] 实现 `meta-cli` 统一 CLI 入口
+- [x] 更新 `script-interfaces.md` 补全新脚本接口文档
+- [x] 更新 `AI_ENTRYPOINT.md` 添加自然语言意图映射表
+- [x] 修复 `OPERATING_MODEL.md` 幻影引用
 - [ ] 实现从 VibeKanban 自动拉取最新任务状态快照
 - [ ] 实现端到端 MCP issue 创建 + 关系建立 + 映射回写自动化
 - [ ] 实现经验回流的半自动化（模板 + 脚本辅助）

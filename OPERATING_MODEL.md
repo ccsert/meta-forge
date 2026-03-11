@@ -61,7 +61,7 @@
 ### 阶段 2：架构初始化
 ```
 输入：project-definition.md
-工具：prompts/architecture + skills/architecture
+工具：prompts/architecture + agents/architecture-agent.md
 产出：architecture-init.md（上下文图、模块划分、ADR）
 闸门：人工确认 ✅
 ```
@@ -69,7 +69,7 @@
 ### 阶段 3：任务拆解
 ```
 输入：architecture-init.md
-工具：prompts/planning + standards/task-definition
+工具：prompts/planning + standards/task-execution-unit.md
 产出：task-breakdown.md（Epic → Feature → Story → Task + 依赖）
 闸门：人工确认 ✅
 ```
@@ -77,7 +77,7 @@
 ### 阶段 4：仓库初始化
 ```
 输入：project-definition + architecture-init
-工具：generators/ + skills/repo
+工具：generators/ + .agents/skills/meta-project-bootstrap
 产出：业务仓库骨架（目录结构、CI、README、ADR、环境配置）
 ```
 
@@ -103,7 +103,7 @@
 |----------|------|----------|
 | 项目定义 | Markdown 固定结构 | templates/project-definition.md |
 | 架构文档 | Markdown 固定结构 | templates/tech-design.md |
-| 任务拆解 | YAML / Markdown 表格 | templates/task-card.md |
+| 任务拆解 | YAML / Markdown 表格 | templates/task-breakdown.md |
 | ADR | Markdown 固定结构 | templates/adr.md |
 | PRD | Markdown 固定结构 | templates/prd.md |
 

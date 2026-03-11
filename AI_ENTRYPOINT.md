@@ -28,6 +28,25 @@
 
 ## 第一步：识别你当前处于哪个阶段
 
+### 快速意图映射（自然语言 → 动作）
+
+如果用户请求可以匹配下表，直接执行对应动作，无需逐步判断阶段：
+
+| 用户说（关键词） | 动作 | 对应 Skill / 脚本 |
+|-----------------|------|-------------------|
+| "新项目" / "我有一个想法" / "从零开始" | 启动项目定义（Stage 1） | `meta-new-project` |
+| "设计架构" / "架构初始化" | 启动架构设计（Stage 2） | `meta-new-project` |
+| "拆任务" / "任务拆解" / "task breakdown" | 启动任务拆解（Stage 3） | `meta-new-project` |
+| "创建仓库" / "bootstrap" / "初始化仓库" | 创建业务仓库（Stage 4-5） | `meta-project-bootstrap` |
+| "同步到 VibeKanban" / "创建 issue" | 同步任务到 VibeKanban | `meta-vibekanban-sync` |
+| "现在到哪一步了" / "阶段检查" / "状态" | 检查当前阶段 | `meta-stage-gate` 或 `npm run meta -- stage` |
+| "下一个任务" / "继续执行" / "编排" | 编排下一个任务 | `npm run meta -- next` |
+| "项目状态" / "仪表盘" / "dashboard" | 查看项目仪表盘 | `npm run meta -- status` |
+| "开始写代码" / "执行任务" | Stage Gate 检查 → Execution Agent | 先 `meta-stage-gate` 再 playbook |
+| "审查代码" / "merge" / "review" | Review / Merge Agent | playbook |
+
+如果用户意图不在上表中，按以下顺序判断：
+
 按以下顺序判断：
 
 ### 1. 新项目阶段

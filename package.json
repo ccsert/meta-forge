@@ -4,10 +4,14 @@
   "type": "module",
   "version": "0.1.0",
   "scripts": {
+    "meta": "node scripts/meta-cli.mjs",
     "generate-issue-batch": "node scripts/generate-issue-batch.mjs",
     "render-issue-description": "node scripts/render-issue-description.mjs",
     "archive-session-result": "node scripts/archive-session-result.mjs",
-    "select-ready-task": "node scripts/select-ready-task.mjs"
+    "select-ready-task": "node scripts/select-ready-task.mjs",
+    "check-stage": "node scripts/check-stage-ready.mjs",
+    "orchestrate": "node scripts/orchestrate-next-task.mjs",
+    "status": "node scripts/project-status.mjs"
   },
   "engines": {
     "node": ">=24"

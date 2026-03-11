@@ -52,8 +52,18 @@ function stripQuotes(value) {
   return text;
 }
 
-function parseScalar(value) {
+function stripInlineComment(value) {
+  // Strip inline comments: "active  # planning | active" → "active"
+  // But preserve # inside quoted strings
   const text = value.trim();
+  if (text.startsWith('"') || text.startsWith("'")) return text;
+  const hashIndex = text.indexOf('#');
+  if (hashIndex === -1) return text;
+  return text.slice(0, hashIndex).trim();
+}
+
+function parseScalar(value) {
+  const text = stripInlineComment(value);
   if (text === '[]') return [];
   if (text === '{}') return {};
   if (text === 'true') return true;

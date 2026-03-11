@@ -4,13 +4,23 @@
 
 ## 目标
 
-当前不直接实现重型自动化平台，而是先定义 3 个最小可用脚本：
+定义元仓库自动化脚本的职责边界、输入输出、错误语义与调用位置。
 
-- `generate-issue-batch`
-- `render-issue-description`
-- `archive-session-result`
+当前已实现 8 个脚本：
 
-它们共同构成第一版“半自动化执行层”。
+**数据生成层：**
+- `generate-issue-batch` — 任务拆解 → issue 批量清单
+- `render-issue-description` — issue 条目 → Markdown 描述
+- `archive-session-result` — session 结果归档
+- `select-ready-task` — 筛选 ready task
+
+**编排层：**
+- `check-stage-ready` — 阶段就绪验证
+- `orchestrate-next-task` — 编排下一个任务
+- `project-status` — 项目状态仪表盘
+
+**入口层：**
+- `meta-cli` — 统一 CLI 入口（`npm run meta -- <command>`）
 
 ---
 
@@ -275,10 +285,156 @@ select-ready-task \
 
 当前 3 个脚本稳定后，再考虑：
 
-- `create-vibekanban-issues`
+- ~~`create-vibekanban-issues`~~
 - `link-vibekanban-relationships`
 - `write-task-execution-summary`
 - `sync-task-branch`
+
+---
+
+## 5. `check-stage-ready`
+
+### 目标
+
+检查指定项目是否满足进入下一阶段的前置条件。
+
+### 典型调用
+
+```bash
+check-stage-ready \
+  --project xhs-draft-platform \
+  --stage 3
+```
+
+省略 `--stage` 时自动检测当前所处阶段。
+
+### 输入
+
+- `projects/registry.yaml`（通过 project id 定位项目条目）
+- 相关文档文件（根据阶段检查其存在性和内容）
+
+### 输出
+
+- JSON 对象：`project_id`, `current_stage`, `passed`, `errors`, `warnings`, `next_action`
+
+### 检查规则
+
+| 阶段 | 文档检查 | 内容检查 |
+|------|---------|---------|
+| 1 项目定义 | project-definition 存在 | 含目标、用户角色、核心功能 |
+| 2 架构初始化 | architecture 存在 | 含系统边界、模块划分、技术选型 |
+| 3 任务拆解 | task_breakdown 存在 | 含 Epic、Task 层级、依赖关系 |
+| 4 仓库初始化 | — | repo_url / github_name 已配置 |
+| 5 文档注入 | — | issue_map 路径已配置 |
+| 6 VibeKanban 绑定 | — | organization_id / project_id / repo_id 已填 |
+| 7 注册表 | — | 通过（能查到即存在） |
+| 8 迭代执行 | — | 存在 ready task |
+
+### 调用位置
+
+- `meta-stage-gate` Skill
+- `AI_ENTRYPOINT.md` 阶段路由
+- `npm run meta -- stage`
+
+---
+
+## 6. `orchestrate-next-task`
+
+### 目标
+
+读取刚完成任务的 session-result，结合 issue-batch 和状态快照，按 callback-policy 决定下一步动作。
+
+### 典型调用
+
+```bash
+orchestrate-next-task \
+  --result .meta/session-result.yaml \
+  --batch .meta/vibekanban-issue-batch.yaml \
+  --status .meta/task-status-snapshot.yaml \
+  --callback-policy unlock-next-on-done \
+  --output .meta/orchestration-decision.yaml
+```
+
+### 输入
+
+- session-result.yaml（已完成任务的结果）
+- vibekanban-issue-batch.yaml（全量任务列表 + 依赖）
+- task-status-snapshot.yaml（当前状态快照）
+
+### 输出
+
+- orchestration-decision.yaml：动作决策 + 新解锁任务 + auto_start_candidate + followup 清单
+
+### 回调策略
+
+| 策略 | 行为 |
+|------|------|
+| `manual-next` | 仅输出推荐，不自动操作 |
+| `unlock-next-on-done` | 解锁下游任务（默认） |
+| `start-next-on-done` | 若仅 1 个 ready task → 标记 auto_start |
+
+### 调用位置
+
+- `playbooks/orchestrate-next-task.md`
+- Orchestrator Agent 流程
+- `npm run meta -- next`
+
+---
+
+## 7. `project-status`
+
+### 目标
+
+输出项目仪表盘：阶段进度、任务统计、最近执行记录。
+
+### 典型调用
+
+```bash
+project-status                          # 所有项目概览
+project-status --project xhs-draft-platform  # 单项目详情
+```
+
+### 输入
+
+- `projects/registry.yaml`
+- `.meta/task-status-snapshot.yaml`（可选，提供任务统计）
+- `runs/` 目录（可选，提供执行历史）
+
+### 输出
+
+- 终端格式化输出（进度条、统计表、执行记录）
+
+### 调用位置
+
+- Agent 会话开始时快速获取项目全貌
+- `npm run meta -- status`
+
+---
+
+## 8. `meta-cli`
+
+### 目标
+
+统一 CLI 入口，转发子命令到对应脚本。
+
+### 用法
+
+```bash
+npm run meta -- <command> [options]
+```
+
+### 可用命令
+
+| 命令 | 转发到 |
+|------|--------|
+| `status` | `project-status.mjs` |
+| `stage` | `check-stage-ready.mjs` |
+| `next` | `orchestrate-next-task.mjs` |
+| `ready` | `select-ready-task.mjs` |
+| `generate` | `generate-issue-batch.mjs` |
+| `render` | `render-issue-description.mjs` |
+| `archive` | `archive-session-result.mjs` |
+| `help` | 输出帮助信息 |
 
 ---
 
