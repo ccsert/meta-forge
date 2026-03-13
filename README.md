@@ -19,6 +19,28 @@
 
 ---
 
+## 理念参考：Harness Engineering
+
+meta-forge 的设计理念与 **Harness Engineering** 高度对齐。这一概念由 Anthropic 工程团队在实践长时间运行 AI Agent 时提出：AI Agent 本身不足以独立完成复杂工程任务，必须在其外围构建结构化"驾驭框架"（harness）——包括环境初始化、状态持久化、增量推进策略、上下文工程和人工闸门——才能让 Agent 在生产级任务中保持可靠性。
+
+| Harness Engineering 核心要素 | meta-forge 对应实现 |
+|---|---|
+| 初始化 Agent 设置环境基线 | Stage 1-3 文档基线 + `meta-project-bootstrap` |
+| 结构化进度跟踪与状态持久化 | `issue-map.yaml` + VibeKanban 任务状态机 |
+| 增量式推进（每次处理一个 Feature） | Epic → Feature → Story → Task 拆解 |
+| 上下文工程（最小必读集，防止 context rot） | `docs/ai-context-packs.md` |
+| 人工闸门（Human Gates） | 五个阶段的 `人工确认 ✅` 检查点 |
+| 多 Agent 分工协作 | `agents/` 六个专职角色 + Playbook 编排 |
+
+**延伸阅读：**
+
+- [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) — Anthropic Engineering, Nov 2025
+- [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) — Anthropic Engineering, Sep 2025
+- [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) — Anthropic Engineering, Dec 2024
+- [Claude Code: Best practices for agentic coding](https://www.anthropic.com/engineering/claude-code-best-practices) — Anthropic Engineering, Apr 2025
+
+---
+
 ## 快速入口
 
 ### 如果我是 AI 我先看哪里
